@@ -11,7 +11,7 @@
 // camelize("-webkit-transition") == 'WebkitTransition';
 // P.S. Подсказка: используйте split, чтобы разбить строку на массив символов, потом переделайте всё как нужно и методом join соедините обратно.
 
-//************************************
+//*  вариатнт решения:
 // вариант решения:
 // function camelize(str) {
 // 	return str
@@ -23,7 +23,7 @@
 // 	  )
 // 	  .join(''); // соединяет ['my', 'Long', 'Word'] в 'myLongWord'
 //   }
-//************************************
+//*******************
 
 
 function camelize(str) {
@@ -60,6 +60,28 @@ console.log('---------------------------------------');
 
 // alert( arr ); // 5,3,8,1 (без изменений)
 
-function filterRange(arr, a, b) {
 
+//*  вариатнт решения:
+// function filterRange(arr, a, b) {
+// 	// добавлены скобки вокруг выражения для улучшения читабельности
+// 	return arr.filter(item => (a <= item && item <= b));
+//   }
+//*******************
+
+
+function filterRange(arr, a, b) {
+	let arrOut = [];
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i] >= a && arr[i] <= b) {
+			arrOut.push(arr[i]);
+		}
+	}
+	return arrOut
 }
+
+let arr = [5, 3, 8, 1];
+let filtered = filterRange(arr, 1, 4);
+console.log(filtered);
+console.log(arr);
+console.log('---------------------------------------');
+
