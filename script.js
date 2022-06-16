@@ -110,3 +110,11 @@ function filterRangeInPlace(arr, a, b) {
 let arr3 = [5, 3, 8, 1];
 filterRangeInPlace(arr3, 1, 4); // удалены числа вне диапазона 1..4
 console.log(arr3);
+
+
+//? 4 Сортировать в порядке по убыванию
+let arr4 = [5, 2, 1, -10, 8];
+arr4.sort((a, b) => b - a);
+console.log(arr4);
+
+
