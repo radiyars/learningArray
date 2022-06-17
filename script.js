@@ -281,3 +281,70 @@ sortByAge(arr2)
 console.log(arr2[0].name); // Вася
 console.log(arr2[1].name); // Маша
 console.log(arr2[2].name); // Петя
+console.log('---------------------------------------');
+
+
+//?_9_Напишите функцию getAverageAge(users), которая принимает массив объектов со свойством age и возвращает средний возраст.
+
+// Формула вычисления среднего арифметического значения: (age1 + age2 + ... + ageN) / N.
+
+// Например:
+
+// let vasya = { name: "Вася", age: 25 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 29 };
+
+// let arr = [ vasya, petya, masha ];
+
+// alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
+// решение
+
+
+let vasya3 = { name: "Вася", age: 25 };
+let petya3 = { name: "Петя", age: 30 };
+let masha3 = { name: "Маша", age: 29 };
+
+let arr5 = [vasya, petya, masha];
+
+function getAverageAge(users) {
+	return Math.round(users.reduce(function (sum, current) { return sum + current.age }, 0) / users.length);
+}
+
+console.log(getAverageAge(arr5));
+console.log('---------------------------------------');
+
+
+//?_10_Пусть arr – массив строк.
+
+// Напишите функцию unique(arr), которая возвращает массив, содержащий только уникальные элементы arr.
+
+// Например:
+
+// function unique(arr) {
+//   /* ваш код */
+// }
+
+// let strings = ["кришна", "кришна", "харе", "харе",
+//   "харе", "харе", "кришна", "кришна", ":-O"
+// ];
+
+// alert( unique(strings) ); // кришна, харе, :-O
+
+
+function unique(arr) {
+	let result = [];
+
+	for (let str of arr) {
+		if (!result.includes(str)) {
+			result.push(str);
+		}
+	}
+
+	return result;
+}
+
+let strings = ["кришна", "кришна", "харе", "харе",
+	"харе", "харе", "кришна", "кришна", ":-O"
+];
+
+console.log(unique(strings)); // кришна, харе, :-O
